@@ -1,0 +1,15 @@
+from ex02 import Roupa
+roupa01=Roupa('Calça',22,30,'azul' )
+roupa02=Roupa('vestido',10,100,'vermelho' )
+roupa03=Roupa('Camisa',12,50,'preto' )
+roupa04=Roupa('short',7,9,'cinza')
+print(roupa01.mostrar_tudo())
+aum=float(input('Informe o valor do aumento: '))
+roupa01.aumento(aum)
+print(roupa01.mostrar_tudo())
+n_p=float(input('Informe o valor do no preco: '))
+roupa01.set_preco(n_p)
+print(roupa01.mostrar_tudo())
+l=float(input('Informe o valor de compra da peça '))
+print('A {} gera {}R$ de lucro'.format(roupa01.get_modelo(),roupa01.lucro(l)))
+
