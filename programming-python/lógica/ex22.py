@@ -1,0 +1,6 @@
+nome=str(input("Informe seu nome completo: ")).strip()
+print("Seu nome escrito em maiusculo é {}".format(nome.upper()))
+print("Seu nome escrito em minusculo é {}".format(nome.lower()))
+print("Seu nome contem {} letras".format(len(nome)-nome.count(" ")))
+separa=nome.split()
+print("Seu prmeiro nome é {} é contem {} letras: ".format(separa[0],len(separa[0])))

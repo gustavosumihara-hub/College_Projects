@@ -1,0 +1,7 @@
+n1=float(input("Informe uma distancia em metros: "))
+print("{}m em km é: {}km".format(n1,n1/1000))
+print("{}m em hm é: {}hm".format(n1,n1/100))
+print("{}m em dam é: {}dam".format(n1,n1/10))
+print("{}m em dm é: {}dm".format(n1,n1*10))
+print("{}m em cm é: {}cm".format(n1,n1*100))
+print("{}m em mm é: {}mm".format(n1,n1*1000))
