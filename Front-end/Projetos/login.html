@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Acesse sua conta ou cadastre-se no Clube Brasa & Co. para acompanhar pedidos, acumular pontos e resgatar cupons exclusivos.">
+  <title>Login &amp; Cadastro | Brasa &amp; Co. Hamburgueria Artesanal</title>
+
+  <!-- Google Fonts: Barlow Condensed (Títulos) & Plus Jakarta Sans (Textos e UI) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Folha de Estilos Reutilizada das Páginas Anteriores -->
+  <link rel="stylesheet" href="Home.css">
+</head>
+<body>
+
+  <!-- ================= BARRA DE NAVEGAÇÃO (NAVBAR) ================= -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar__container">
+      <!-- Logotipo -->
+      <a href="Home.html" class="navbar__logo" aria-label="Brasa & Co. Página Inicial">
+        <span class="navbar__logo-icon" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>
+          </svg>
+        </span>
+        <div class="navbar__logo-text">
+          <span class="navbar__brand">BRASA <span class="text-yellow">&amp;</span> CO.</span>
+          <span class="navbar__tagline">HAMBURGUERIA ARTESANAL</span>
+        </div>
+      </a>
+
+      <!-- Links de Navegação Desktop -->
+      <nav class="navbar__nav" id="nav-menu" aria-label="Menu Principal">
+        <ul class="navbar__list">
+          <li><a href="Home.html" class="navbar__link">Início</a></li>
+          <li><a href="cardapio.html" class="navbar__link">Cardápio</a></li>
+          <li><a href="avaliacoes.html" class="navbar__link">Avaliações</a></li>
+          <li>
+            <a href="Combos.html" class="navbar__link navbar__link--promo">
+              Combos
+              <span class="badge-dot" aria-hidden="true"></span>
+            </a>
+          </li>
+          <li><a href="carrinho.html" class="navbar__link">Pedido</a></li>
+        </ul>
+
+        <!-- Ações Mobile -->
+        <div class="navbar__mobile-actions">
+          <a href="login.html" class="btn btn--login" aria-current="page">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+            Login / Cadastro
+          </a>
+          <a href="cardapio.html" class="btn btn--primary">Ver Cardápio</a>
+        </div>
+      </nav>
+
+      <!-- Área Destacada de Login/Cadastro + CTA Desktop -->
+      <div class="navbar__actions">
+        <a href="login.html" class="btn btn--login" aria-current="page" title="Você está na área de acesso">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+          <span>Área do Cliente</span>
+        </a>
+        <a href="cardapio.html" class="btn btn--primary btn--sm">Pedir Agora</a>
+      </div>
+
+      <!-- Botão Menu Hambúrguer (Mobile) -->
+      <button class="navbar__toggle" id="menu-toggle" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="nav-menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ================= CABEÇALHO DA ÁREA DO CLIENTE ================= -->
+    <section class="page-header">
+      <div class="container page-header__inner">
+        <div>
+          <nav class="breadcrumb" aria-label="Navegação estrutural">
+            <a href="Home.html">Início</a>
+            <span aria-hidden="true">/</span>
+            <span>Login &amp; Cadastro</span>
+          </nav>
+          <h1 class="page-header__title">Clube <span class="text-yellow">Brasa &amp; Co.</span></h1>
+          <p class="page-header__subtitle">
+            Entre na sua conta para finalizar seu pedido mais rápido, repetir seus combos favoritos com um clique e acompanhar a entrega direto da grelha até a sua porta.
+          </p>
+        </div>
+
+        <div class="page-header__callout">
+          <span class="callout__label">NOVO POR AQUI?</span>
+          <strong>Ganhe R$ 15,00 OFF na Hora</strong>
+          <p>Crie seu cadastro gratuito hoje e libere o cupom <strong>BRASA15</strong> automaticamente.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SEÇÃO PRINCIPAL: VANTAGENS + FORMULÁRIOS ================= -->
+    <section class="section section--dark">
+      <div class="container about__grid">
+
+        <!-- Coluna Esquerda: Benefícios de Ter Conta -->
+        <div>
+          <span class="section__eyebrow text-yellow">POR QUE SE CADASTRAR?</span>
+          <h2 class="section__title section__title--light">
+            Mais Sabor, Menos Espera e Recompensas Reais.
+          </h2>
+          <p class="about__text">
+            Quem faz parte do nosso clube de apaixonados por hambúrguer artesanal tem acesso antecipado aos burgers sazonais e acumula brasas em cada pedido.
+          </p>
+
+          <div class="pillars">
+            <div class="pillar-item">
+              <div class="pillar-item__icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>
+                </svg>
+              </div>
+              <div>
+                <h3>Programa de Pontos Brasa</h3>
+                <p>A cada R$ 1,00 gasto, você ganha 10 brasas para trocar por porções, shakes ou burgers inteiros.</p>
+              </div>
+            </div>
+
+            <div class="pillar-item">
+              <div class="pillar-item__icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <circle cx="12" cy="12" r="10"/>
+                  <polyline points="12 6 12 12 16 14"/>
+                </svg>
+              </div>
+              <div>
+                <h3>Checkout em 15 Segundos</h3>
+                <p>Salve seus endereços de entrega e o ponto preferido da sua carne (ao ponto ou bem passado).</p>
+              </div>
+            </div>
+
+            <div class="pillar-item">
+              <div class="pillar-item__icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/>
+                  <line x1="7" y1="7" x2="7.01" y2="7"/>
+                </svg>
+              </div>
+              <div>
+                <h3>Ofertas Secretas Toda Quinta</h3>
+                <p>Receba cupons exclusivos para os combos do cardápio antes de serem divulgados nas redes sociais.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coluna Direita: Card de Autenticação (Login / Cadastro) -->
+        <div class="review-card">
+          <div>
+            <!-- Abas de Alternância Login / Cadastro -->
+            <div class="filter-tabs" role="tablist" aria-label="Escolha entre entrar ou cadastrar" style="margin-bottom: 1.5rem;">
+              <button
+                type="button"
+                class="filter-tab is-active"
+                id="tab-login"
+                role="tab"
+                aria-selected="true"
+                aria-controls="login-form"
+              >
+                Entrar na Conta
+              </button>
+              <button
+                type="button"
+                class="filter-tab"
+                id="tab-register"
+                role="tab"
+                aria-selected="false"
+                aria-controls="register-form"
+              >
+                Criar Conta Grátis
+              </button>
+            </div>
+
+            <!-- Caixa de Feedback de Ação (Exibida após envio ou recuperação) -->
+            <div
+              id="auth-feedback"
+              role="status"
+              aria-live="polite"
+              hidden
+              style="background-color: var(--color-brown-dark); color: var(--color-cream); border-left: 4px solid var(--color-yellow); padding: 1rem 1.15rem; border-radius: var(--radius-sm); margin-bottom: 1.35rem;"
+            >
+              <strong id="feedback-title" style="display: block; color: var(--color-yellow); margin-bottom: 0.25rem;"></strong>
+              <p id="feedback-message" style="font-size: 0.88rem; margin-bottom: 0.75rem;"></p>
+              <div style="display: flex; gap: 0.6rem; flex-wrap: wrap;">
+                <a href="cardapio.html" class="btn btn--primary btn--sm">Ir para o Cardápio</a>
+                <a href="promocoes.html" class="btn btn--outline-yellow btn--sm">Ver Promoções</a>
+              </div>
+            </div>
+
+            <!-- ================= FORMULÁRIO DE LOGIN ================= -->
+            <form id="login-form" role="tabpanel" aria-labelledby="tab-login" style="display: flex; flex-direction: column; gap: 1.15rem;">
+              <div>
+                <h2 class="burger-card__title" style="font-size: 1.8rem; margin-bottom: 0.2rem;">Bem-vindo de Volta!</h2>
+                <p style="font-size: 0.9rem; color: var(--color-brown);">Informe seu e-mail e senha para acessar sua conta.</p>
+              </div>
+
+              <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                <label for="login-email" style="font-size: 0.86rem; font-weight: 700; color: var(--color-brown-dark);">E-mail</label>
+                <input
+                  type="email"
+                  id="login-email"
+                  name="email"
+                  required
+                  autocomplete="email"
+                  placeholder="seuemail@exemplo.com.br"
+                  style="width: 100%; padding: 0.8rem 1rem; border-radius: var(--radius-sm); border: 1.5px solid var(--color-cream-border); background-color: #FFFFFF; font-family: var(--font-body); font-size: 0.95rem; color: var(--color-black);"
+                >
+              </div>
+
+              <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <label for="login-password" style="font-size: 0.86rem; font-weight: 700; color: var(--color-brown-dark);">Senha</label>
+                  <button
+                    type="button"
+                    id="forgot-password-btn"
+                    style="background: none; border: none; color: var(--color-red); font-family: var(--font-body); font-size: 0.82rem; font-weight: 700; cursor: pointer; text-decoration: underline;"
+                  >
+                    Esqueci minha senha
+                  </button>
+                </div>
+                <div style="position: relative; display: flex; align-items: center;">
+                  <input
+                    type="password"
+                    id="login-password"
+                    name="password"
+                    required
+                    autocomplete="current-password"
+                    placeholder="Digite sua senha"
+                    style="width: 100%; padding: 0.8rem 3.2rem 0.8rem 1rem; border-radius: var(--radius-sm); border: 1.5px solid var(--color-cream-border); background-color: #FFFFFF; font-family: var(--font-body); font-size: 0.95rem; color: var(--color-black);"
+                  >
+                  <button
+                    type="button"
+                    class="toggle-password"
+                    data-target="login-password"
+                    aria-label="Mostrar ou ocultar senha"
+                    style="position: absolute; right: 12px; background: none; border: none; color: var(--color-brown); font-family: var(--font-body); font-size: 0.78rem; font-weight: 700; cursor: pointer;"
+                  >
+                    Ver
+                  </button>
+                </div>
+              </div>
+
+              <label style="display: flex; align-items: center; gap: 0.55rem; font-size: 0.86rem; color: var(--color-brown-dark); cursor: pointer;">
+                <input type="checkbox" name="remember" checked style="accent-color: var(--color-red); width: 16px; height: 16px;">
+                Manter conectado neste dispositivo
+              </label>
+
+              <button type="submit" class="btn btn--primary btn--lg" style="width: 100%;">
+                Entrar na Minha Conta
+              </button>
+
+              <p style="text-align: center; font-size: 0.86rem; color: var(--color-brown); padding-top: 0.5rem; border-top: 1px solid var(--color-cream-border);">
+                Ainda não tem cadastro?
+                <button
+                  type="button"
+                  id="switch-to-register"
+                  style="background: none; border: none; color: var(--color-red); font-family: var(--font-body); font-weight: 700; cursor: pointer; text-decoration: underline;"
+                >
+                  Crie agora e ganhe R$ 15 OFF
+                </button>
+              </p>
+            </form>
+
+            <!-- ================= FORMULÁRIO DE CADASTRO ================= -->
+            <form id="register-form" role="tabpanel" aria-labelledby="tab-register" hidden style="display: none; flex-direction: column; gap: 1rem;">
+              <div>
+                <h2 class="burger-card__title" style="font-size: 1.8rem; margin-bottom: 0.2rem;">Crie Sua Conta Brasa</h2>
+                <p style="font-size: 0.9rem; color: var(--color-brown);">Preencha seus dados abaixo para desbloquear o cupom <strong>BRASA15</strong>.</p>
+              </div>
+
+              <div style="display: flex; flex-direction: column; gap: 0.35rem;">
+                <label for="reg-name" style="font-size: 0.86rem; font-weight: 700; color: var(--color-brown-dark);">Nome Completo</label>
+                <input
+                  type="text"
+                  id="reg-name"
+                  name="name"
+                  required
+                  autocomplete="name"
+                  placeholder="Ex: João Silva"
+                  style="width: 100%; padding: 0.78rem 1rem; border-radius: var(--radius-sm); border: 1.5px solid var(--color-cream-border); background-color: #FFFFFF; font-family: var(--font-body); font-size: 0.95rem; color: var(--color-black);"
+                >
+              </div>
+
+              <div style="display: flex; flex-direction: column; gap: 0.35rem;">
+                <label for="reg-phone" style="font-size: 0.86rem; font-weight: 700; color: var(--color-brown-dark);">WhatsApp (para status do pedido)</label>
+                <input
+                  type="tel"
+                  id="reg-phone"
+                  name="phone"
+                  required
+                  autocomplete="tel"
+                  placeholder="(11) 99999-0000"
+                  style="width: 100%; padding: 0.78rem 1rem; border-radius: var(--radius-sm); border: 1.5px solid var(--color-cream-border); background-color: #FFFFFF; font-family: var(--font-body); font-size: 0.95rem; color: var(--color-black);"
+                >
+              </div>
+
+              <div style="display: flex; flex-direction: column; gap: 0.35rem;">
+                <label for="reg-email" style="font-size: 0.86rem; font-weight: 700; color: var(--color-brown-dark);">E-mail</label>
+                <input
+                  type="email"
+                  id="reg-email"
+                  name="email"
+                  required
+                  autocomplete="email"
+                  placeholder="seuemail@exemplo.com.br"
+                  style="width: 100%; padding: 0.78rem 1rem; border-radius: var(--radius-sm); border: 1.5px solid var(--color-cream-border); background-color: #FFFFFF; font-family: var(--font-body); font-size: 0.95rem; color: var(--color-black);"
+                >
+              </div>
+
+              <div style="display: flex; flex-direction: column; gap: 0.35rem;">
+                <label for="reg-password" style="font-size: 0.86rem; font-weight: 700; color: var(--color-brown-dark);">Crie uma Senha (mín. 6 caracteres)</label>
+                <div style="position: relative; display: flex; align-items: center;">
+                  <input
+                    type="password"
+                    id="reg-password"
+                    name="password"
+                    minlength="6"
+                    required
+                    autocomplete="new-password"
+                    placeholder="••••••••"
+                    style="width: 100%; padding: 0.78rem 3.2rem 0.78rem 1rem; border-radius: var(--radius-sm); border: 1.5px solid var(--color-cream-border); background-color: #FFFFFF; font-family: var(--font-body); font-size: 0.95rem; color: var(--color-black);"
+                  >
+                  <button
+                    type="button"
+                    class="toggle-password"
+                    data-target="reg-password"
+                    aria-label="Mostrar ou ocultar senha"
+                    style="position: absolute; right: 12px; background: none; border: none; color: var(--color-brown); font-family: var(--font-body); font-size: 0.78rem; font-weight: 700; cursor: pointer;"
+                  >
+                    Ver
+                  </button>
+                </div>
+              </div>
+
+              <label style="display: flex; align-items: flex-start; gap: 0.55rem; font-size: 0.82rem; color: var(--color-brown); cursor: pointer;">
+                <input type="checkbox" required style="accent-color: var(--color-red); width: 16px; height: 16px; margin-top: 2px;">
+                Concordo com os Termos de Uso e aceito receber cupons promocionais da Brasa &amp; Co.
+              </label>
+
+              <button type="submit" class="btn btn--primary btn--lg" style="width: 100%;">
+                Criar Conta e Liberar R$ 15 OFF
+              </button>
+
+              <p style="text-align: center; font-size: 0.86rem; color: var(--color-brown); padding-top: 0.5rem; border-top: 1px solid var(--color-cream-border);">
+                Já possui uma conta?
+                <button
+                  type="button"
+                  id="switch-to-login"
+                  style="background: none; border: none; color: var(--color-red); font-family: var(--font-body); font-weight: 700; cursor: pointer; text-decoration: underline;"
+                >
+                  Fazer Login
+                </button>
+              </p>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= FAIXA DE NAVEGAÇÃO RÁPIDA ================= -->
+    <section class="promo-strip" aria-label="Acesso rápido sem cadastro">
+      <div class="container promo-strip__container">
+        <div class="promo-strip__info">
+          <span class="promo-strip__pill">PEDIDO RÁPIDO</span>
+          <p class="promo-strip__text">
+            Prefere escolher seus burgers antes? Você pode explorar todas as opções e combos livremente.
+          </p>
+        </div>
+        <a href="cardapio.html" class="promo-strip__link">
+          Ir Direto ao Cardápio &rarr;
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= RODAPÉ (FOOTER) ================= -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <!-- Coluna 1: Marca -->
+      <div class="footer__col">
+        <a href="index.html" class="navbar__logo footer__logo">
+          <span class="navbar__logo-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>
+            </svg>
+          </span>
+          <div class="navbar__logo-text">
+            <span class="navbar__brand">BRASA <span class="text-yellow">&amp;</span> CO.</span>
+            <span class="navbar__tagline">HAMBURGUERIA ARTESANAL</span>
+          </div>
+        </a>
+        <p class="footer__desc">
+          Paixão por carne fresca, fogo real e receitas autorais desde 2018. Venha viver a experiência completa no salão ou peça no conforto de casa.
+        </p>
+        <div class="footer__socials">
+          <a href="#" aria-label="Instagram da Brasa & Co." class="social-link">IG</a>
+          <a href="#" aria-label="TikTok da Brasa & Co." class="social-link">TT</a>
+          <a href="#" aria-label="WhatsApp da Brasa & Co." class="social-link">WA</a>
+        </div>
+      </div>
+
+
+
+      <!-- Coluna 3: Horários -->
+      <div class="footer__col">
+        <h3 class="footer__heading">Horário de Funcionamento</h3>
+        <ul class="footer__hours">
+          <li><span>Terça a Quinta:</span> <strong>18h00 – 23h30</strong></li>
+          <li><span>Sexta e Sábado:</span> <strong>18h00 – 01h00</strong></li>
+          <li><span>Domingo:</span> <strong>17h30 – 23h00</strong></li>
+          <li class="closed"><span>Segunda-feira:</span> <strong>Fechado (Preparo)</strong></li>
+        </ul>
+      </div>
+
+      <!-- Coluna 4: Endereço e Contato -->
+      <div class="footer__col">
+        <h3 class="footer__heading">Onde Estamos</h3>
+        <address class="footer__address">
+          <p>Rua das Brasas, 482 — Vila Madalena</p>
+          <p>São Paulo — SP, CEP 05434-000</p>
+          <p class="footer__contact">WhatsApp: <a href="tel:+5511999998888">(11) 99999-8888</a></p>
+          <p class="footer__contact">E-mail: <a href="mailto:contato@brasaeco.com.br">contato@brasaeco.com.br</a></p>
+        </address>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="container footer__bottom-inner">
+        <p>&copy; 2026 Brasa &amp; Co. Hamburgueria Artesanal. Todos os direitos reservados.</p>
+        <p>Imagens ilustrativas • Feito com fogo e paixão.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= JAVASCRIPT DE INTERAÇÃO (LOGIN / CADASTRO) ================= -->
+  <script>
+    // 1. Menu Mobile Responsivo
+    const menuToggle = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = navMenu.classList.toggle('is-open');
+      menuToggle.classList.toggle('is-active');
+      menuToggle.setAttribute('aria-expanded', isOpen);
+    });
+
+    // 2. Alternância entre Abas de Login e Cadastro
+    const tabLogin = document.getElementById('tab-login');
+    const tabRegister = document.getElementById('tab-register');
+    const loginForm = document.getElementById('login-form');
+    const registerForm = document.getElementById('register-form');
+    const authFeedback = document.getElementById('auth-feedback');
+    const feedbackTitle = document.getElementById('feedback-title');
+    const feedbackMessage = document.getElementById('feedback-message');
+
+    function showLogin() {
+      tabLogin.classList.add('is-active');
+      tabLogin.setAttribute('aria-selected', 'true');
+      tabRegister.classList.remove('is-active');
+      tabRegister.setAttribute('aria-selected', 'false');
+
+      loginForm.hidden = false;
+      loginForm.style.display = 'flex';
+      registerForm.hidden = true;
+      registerForm.style.display = 'none';
+      authFeedback.hidden = true;
+    }
+
+    function showRegister() {
+      tabRegister.classList.add('is-active');
+      tabRegister.setAttribute('aria-selected', 'true');
+      tabLogin.classList.remove('is-active');
+      tabLogin.setAttribute('aria-selected', 'false');
+
+      registerForm.hidden = false;
+      registerForm.style.display = 'flex';
+      loginForm.hidden = true;
+      loginForm.style.display = 'none';
+      authFeedback.hidden = true;
+    }
+
+    tabLogin.addEventListener('click', showLogin);
+    tabRegister.addEventListener('click', showRegister);
+    document.getElementById('switch-to-register').addEventListener('click', showRegister);
+    document.getElementById('switch-to-login').addEventListener('click', showLogin);
+
+    // 3. Mostrar / Ocultar Senha
+    document.querySelectorAll('.toggle-password').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const input = document.getElementById(btn.dataset.target);
+        const isPassword = input.type === 'password';
+        input.type = isPassword ? 'text' : 'password';
+        btn.textContent = isPassword ? 'Ocultar' : 'Ver';
+      });
+    });
+
+    // 4. Simulação de Envio de Login, Cadastro e Recuperação
+    loginForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = document.getElementById('login-email').value;
+      feedbackTitle.textContent = 'Login realizado com sucesso!';
+      feedbackMessage.textContent = `Olá (${email}), você já está conectado ao Clube Brasa & Co. Seu saldo atual é de 350 brasas.`;
+      authFeedback.hidden = false;
+    });
+
+    registerForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('reg-name').value.trim().split(' ')[0];
+      feedbackTitle.textContent = `Bem-vindo ao Clube Brasa, ${name}!`;
+      feedbackMessage.textContent = 'Sua conta foi criada e o cupom BRASA15 (R$ 15,00 OFF) já está ativo para seu primeiro pedido.';
+      authFeedback.hidden = false;
+    });
+
+    document.getElementById('forgot-password-btn').addEventListener('click', () => {
+      const emailInput = document.getElementById('login-email');
+      feedbackTitle.textContent = 'Recuperação de senha';
+      feedbackMessage.textContent = emailInput.value
+        ? `Enviamos um link de redefinição de senha para ${emailInput.value}.`
+        : 'Digite seu e-mail no campo acima e clique novamente para receber o link de redefinição.';
+      authFeedback.hidden = false;
+    });
+  </script>
+</body>
+</html>

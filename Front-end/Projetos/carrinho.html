@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Carrinho de Pedidos Brasa & Co. — Revise seus hambúrgueres artesanais, aplique cupons de desconto e finalize sua entrega ou retirada.">
+  <title>Meu Carrinho | Brasa &amp; Co. Hamburgueria Artesanal</title>
+
+  <!-- Google Fonts: Barlow Condensed (Títulos) & Plus Jakarta Sans (Textos e UI) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Folha de Estilos Reutilizada das Páginas Anteriores -->
+  <link rel="stylesheet" href="unificado.css">
+
+  <!-- Referência ao JavaScript Unificado -->
+  <script src="cardapio.js" defer></script>
+</head>
+<body>
+
+  <!-- ================= BARRA DE NAVEGAÇÃO (NAVBAR) ================= -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar__container">
+      <!-- Logotipo -->
+      <a href="Home.html" class="navbar__logo" aria-label="Brasa & Co. Página Inicial">
+        <span class="navbar__logo-icon" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>
+          </svg>
+        </span>
+        <div class="navbar__logo-text">
+          <span class="navbar__brand">BRASA <span class="text-yellow">&amp;</span> CO.</span>
+          <span class="navbar__tagline">HAMBURGUERIA ARTESANAL</span>
+        </div>
+      </a>
+
+      <!-- Links de Navegação Desktop -->
+      <nav class="navbar__nav" id="nav-menu" aria-label="Menu Principal">
+        <ul class="navbar__list">
+          <li><a href="Home.html" class="navbar__link">Início</a></li>
+          <li><a href="cardapio.html" class="navbar__link">Cardápio</a></li>
+          <li><a href="avaliacoes.html" class="navbar__link">Avaliações</a></li>
+          <li>
+            <a href="Combos.html" class="navbar__link navbar__link--promo">
+              Combos
+              <span class="badge-dot" aria-hidden="true"></span>
+            </a>
+          </li>
+          <li><a href="carrinho.html" class="navbar__link active">Carrinho</a></li>
+        </ul>
+
+        <!-- Ações Mobile -->
+        <div class="navbar__mobile-actions">
+          <a href="login.html" class="btn btn--login">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+            Login / Cadastro
+          </a>
+          <a href="cardapio.html" class="btn btn--primary">Adicionar Mais Itens</a>
+        </div>
+      </nav>
+
+      <!-- Área Destacada de Login/Cadastro + Indicador do Carrinho Desktop -->
+      <div class="navbar__actions">
+        <a href="login.html" class="btn btn--login" title="Acessar conta ou cadastrar-se">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+          <span>Entrar / Cadastrar</span>
+        </a>
+        <a href="carrinho.html" class="btn btn--primary btn--sm" aria-current="page" title="Itens no carrinho">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="9" cy="21" r="1"/>
+            <circle cx="20" cy="21" r="1"/>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+          </svg>
+          <span id="nav-cart-badge">0 itens</span>
+        </a>
+      </div>
+
+      <!-- Botão Menu Hambúrguer (Mobile) -->
+      <button class="navbar__toggle" id="menu-toggle" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="nav-menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ================= CABEÇALHO DO CARRINHO ================= -->
+    <section class="page-header">
+      <div class="container page-header__inner">
+        <div>
+          <nav class="breadcrumb" aria-label="Navegação estrutural">
+            <a href="index.html">Início</a>
+            <span aria-hidden="true">/</span>
+            <a href="cardapio.html">Cardápio</a>
+            <span aria-hidden="true">/</span>
+            <span>Meu Carrinho</span>
+          </nav>
+          <h1 class="page-header__title">Seu Pedido <span class="text-yellow">Na Brasa</span></h1>
+          <p class="page-header__subtitle">
+            Ajuste as quantidades, escolha o ponto ideal da carne e aplique seu cupom antes de enviarmos seu pedido direto para a grelha.
+          </p>
+        </div>
+
+        <div class="page-header__callout">
+          <span class="callout__label">FRETE GRÁTIS &amp; CUPOM</span>
+          <strong>Pedidos acima de R$ 90,00</strong>
+          <p>Ganhe entrega grátis automática ou use o cupom <strong>BRASA15</strong> para R$ 15,00 OFF acima de R$ 50,00.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FAIXA INFORMATIVA ================= -->
+    <section class="promo-strip" aria-label="Acompanhamento incluso">
+      <div class="container promo-strip__container">
+        <div class="promo-strip__info">
+          <span class="promo-strip__pill">CORTESIA DA CASA</span>
+          <p class="promo-strip__text">
+            Cada hambúrguer do seu carrinho acompanha <strong>1 potinho de Maionese Defumada (40ml)</strong> sem custo adicional.
+          </p>
+        </div>
+        <a href="promocoes.html" class="promo-strip__link">
+          Ver Combos Promocionais &rarr;
+        </a>
+      </div>
+    </section>
+
+    <!-- ================= CONTEÚDO PRINCIPAL DO CARRINHO ================= -->
+    <section class="section section--cream">
+      <div class="container">
+
+        <!-- TELA DE PEDIDO CONFIRMADO (Oculta até finalizar) -->
+        <div
+          id="order-confirmed-box"
+          hidden
+          style="background: linear-gradient(125deg, var(--color-black) 0%, var(--color-brown-dark) 75%); color: var(--color-cream); border: 2px solid var(--color-yellow); border-radius: var(--radius-lg); padding: 3rem 2rem; text-align: center; box-shadow: var(--shadow-elevated); margin-bottom: 2.5rem;"
+        >
+          <span class="loyalty-banner__tag">PEDIDO ENVIADO PARA A GRELHA!</span>
+          <h2 class="section__title section__title--light" style="margin-top: 0.5rem;">
+            Pedido <span class="text-yellow" id="confirmed-code">#BRASA-4829</span> Confirmado
+          </h2>
+          <p style="max-width: 600px; margin: 0 auto 1.5rem; color: rgba(250, 243, 230, 0.86);" id="confirmed-summary-text">
+            Nossa cozinha já recebeu seu pedido e iniciou o preparo na brasa.
+          </p>
+
+          <div style="display: inline-flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; background-color: rgba(18, 14, 12, 0.65); border: 1px solid rgba(244, 169, 30, 0.35); padding: 1rem 1.75rem; border-radius: var(--radius-md); margin-bottom: 2rem;">
+            <div>
+              <span style="display: block; font-size: 0.75rem; color: var(--color-yellow); font-weight: 700; text-transform: uppercase;">Previsão Estimada</span>
+              <strong style="font-size: 1.15rem;" id="confirmed-time">30 a 40 minutos</strong>
+            </div>
+            <div style="width: 1px; background-color: rgba(250, 243, 230, 0.2);"></div>
+            <div>
+              <span style="display: block; font-size: 0.75rem; color: var(--color-yellow); font-weight: 700; text-transform: uppercase;">Total Pago / A Pagar</span>
+              <strong style="font-size: 1.15rem;" id="confirmed-total">R$ 0,00</strong>
+            </div>
+          </div>
+
+          <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+            <a href="index.html" class="btn btn--primary btn--lg">Voltar ao Início</a>
+            <button type="button" id="new-order-btn" class="btn btn--outline-yellow btn--lg">Fazer Novo Pedido</button>
+          </div>
+        </div>
+
+        <!-- GRADE DO CARRINHO (ESQUERDA: ITENS | DIREITA: RESUMO E CHECKOUT) -->
+        <div class="about__grid" id="cart-workspace" style="grid-template-columns: 1.25fr 0.75fr; align-items: start; gap: 2.5rem;">
+
+          <!-- ================= COLUNA ESQUERDA: LISTA DE ITENS + SUGESTÕES ================= -->
+          <div>
+            <!-- Cabeçalho da Lista -->
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1.35rem; padding-bottom: 0.85rem; border-bottom: 2px solid var(--color-cream-border);">
+              <div>
+                <span class="section__eyebrow" style="margin-bottom: 0.15rem;">ITENS SELECIONADOS</span>
+                <h2 class="burger-card__title" style="font-size: 1.9rem;" id="cart-items-heading">Seu Carrinho (0 itens)</h2>
+              </div>
+              <div style="display: flex; gap: 0.6rem; flex-wrap: wrap;">
+                <a href="cardapio.html" class="btn btn--brown btn--sm">+ Continuar Comprando</a>
+                <button type="button" id="clear-cart-all" class="btn btn--sm" style="background-color: transparent; border: 1.5px solid var(--color-cream-border); color: var(--color-brown);">
+                  Limpar Carrinho
+                </button>
+              </div>
+            </div>
+
+            <!-- Estado de Carrinho Vazio -->
+            <div
+              id="empty-cart-box"
+              hidden
+              style="background-color: var(--color-cream-alt); border: 1.5px dashed var(--color-cream-border); border-radius: var(--radius-md); padding: 3rem 1.5rem; text-align: center; margin-bottom: 2rem;"
+            >
+              <h3 class="burger-card__title" style="font-size: 1.85rem; color: var(--color-brown-dark); margin-bottom: 0.4rem;">
+                Seu carrinho está vazio no momento
+              </h3>
+              <p style="color: var(--color-brown); max-width: 440px; margin: 0 auto 1.5rem; font-size: 0.95rem;">
+                Escolha seus burgers 100% Angus na brasa no nosso cardápio completo ou adicione uma das sugestões rápidas abaixo.
+              </p>
+              <div style="display: flex; justify-content: center; gap: 0.85rem; flex-wrap: wrap;">
+                <a href="cardapio.html" class="btn btn--primary">Explorar Cardápio</a>
+                <a href="promocoes.html" class="btn btn--brown">Ver Promoções</a>
+              </div>
+            </div>
+
+            <!-- Container Dinâmico dos Itens no Carrinho (Preenchido pelo app.js) -->
+            <div id="cart-items-list" style="display: flex; flex-direction: column; gap: 1.15rem; margin-bottom: 2.75rem;"></div>
+
+            <!-- ================= SEÇÃO DE UPSELL: TURBINE SEU PEDIDO ================= -->
+            <div style="background-color: var(--color-cream-alt); border: 1px solid var(--color-cream-border); border-radius: var(--radius-md); padding: 1.5rem;">
+              <div style="margin-bottom: 1.15rem;">
+                <span class="section__eyebrow" style="margin-bottom: 0.15rem;">COMPLETE SUA EXPERIÊNCIA</span>
+                <h3 class="burger-card__title" style="font-size: 1.65rem; color: var(--color-brown-dark);">Turbine Seu Pedido com 1 Clique</h3>
+              </div>
+
+              <div class="reviews-grid" style="gap: 1rem;">
+                <!-- Sugestão 1 -->
+                <article class="review-card" style="padding: 1.1rem; background-color: #FFFFFF;">
+                  <div>
+                    <img
+                      src="https://images.unsplash.com/photo-1585109649139-366815a0d713?auto=format&fit=crop&w=600&q=80"
+                      alt="Fritas Brasa Loaded com cheddar e bacon"
+                      style="width: 100%; height: 110px; object-fit: cover; border-radius: var(--radius-sm); margin-bottom: 0.75rem;"
+                      loading="lazy"
+                    >
+                    <h4 class="burger-card__title" style="font-size: 1.25rem;">Fritas Brasa Loaded</h4>
+                    <p style="font-size: 0.82rem; color: var(--color-brown); margin: 0.3rem 0 0.85rem;">
+                      450g de fritas rústicas com creme de cheddar inglês e bacon crocante.
+                    </p>
+                  </div>
+                  <div style="display: flex; align-items: center; justify-content: space-between; padding-top: 0.7rem; border-top: 1px solid var(--color-cream-alt);">
+                    <strong style="font-family: var(--font-display); font-size: 1.35rem; color: var(--color-red);">R$ 28,90</strong>
+                    <button
+                      type="button"
+                      class="btn btn--primary btn--sm quick-add-btn"
+                      data-id="fritas-loaded"
+                      data-name="Fritas Brasa Loaded"
+                      data-desc="450g • Cheddar cremoso e bacon defumado"
+                      data-price="28.90"
+                      data-burger="false"
+                      data-img="https://images.unsplash.com/photo-1585109649139-366815a0d713?auto=format&fit=crop&w=600&q=80"
+                    >
+                      + Incluir
+                    </button>
+                  </div>
+                </article>
+
+                <!-- Sugestão 2 -->
+                <article class="review-card" style="padding: 1.1rem; background-color: #FFFFFF;">
+                  <div>
+                    <img
+                      src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=600&q=80"
+                      alt="Shake Doce de Leite & Sal"
+                      style="width: 100%; height: 110px; object-fit: cover; border-radius: var(--radius-sm); margin-bottom: 0.75rem;"
+                      loading="lazy"
+                    >
+                    <h4 class="burger-card__title" style="font-size: 1.25rem;">Shake Doce de Leite</h4>
+                    <p style="font-size: 0.82rem; color: var(--color-brown); margin: 0.3rem 0 0.85rem;">
+                      400ml • Sorvete de baunilha, doce de leite mineiro e flor de sal.
+                    </p>
+                  </div>
+                  <div style="display: flex; align-items: center; justify-content: space-between; padding-top: 0.7rem; border-top: 1px solid var(--color-cream-alt);">
+                    <strong style="font-family: var(--font-display); font-size: 1.35rem; color: var(--color-red);">R$ 24,90</strong>
+                    <button
+                      type="button"
+                      class="btn btn--primary btn--sm quick-add-btn"
+                      data-id="shake-doce-leite"
+                      data-name="Shake Doce de Leite & Sal"
+                      data-desc="400ml • Sorvete artesanal e doce de leite"
+                      data-price="24.90"
+                      data-burger="false"
+                      data-img="https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=600&q=80"
+                    >
+                      + Incluir
+                    </button>
+                  </div>
+                </article>
+
+                <!-- Sugestão 3 -->
+                <article class="review-card" style="padding: 1.1rem; background-color: #FFFFFF;">
+                  <div>
+                    <img
+                      src="https://images.unsplash.com/photo-1639024471283-03518883512d?auto=format&fit=crop&w=600&q=80"
+                      alt="Onion Rings Artesanais"
+                      style="width: 100%; height: 110px; object-fit: cover; border-radius: var(--radius-sm); margin-bottom: 0.75rem;"
+                      loading="lazy"
+                    >
+                    <h4 class="burger-card__title" style="font-size: 1.25rem;">Onion Rings Artesanais</h4>
+                    <p style="font-size: 0.82rem; color: var(--color-brown); margin: 0.3rem 0 0.85rem;">
+                      12 unid. • Anéis de cebola crocantes com molho barbecue da casa.
+                    </p>
+                  </div>
+                  <div style="display: flex; align-items: center; justify-content: space-between; padding-top: 0.7rem; border-top: 1px solid var(--color-cream-alt);">
+                    <strong style="font-family: var(--font-display); font-size: 1.35rem; color: var(--color-red);">R$ 24,90</strong>
+                    <button
+                      type="button"
+                      class="btn btn--primary btn--sm quick-add-btn"
+                      data-id="onion-rings"
+                      data-name="Onion Rings Artesanais"
+                      data-desc="12 unidades • Acompanha barbecue defumado"
+                      data-price="24.90"
+                      data-burger="false"
+                      data-img="https://images.unsplash.com/photo-1639024471283-03518883512d?auto=format&fit=crop&w=600&q=80"
+                    >
+                      + Incluir
+                    </button>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= COLUNA DIREITA: RESUMO & FINALIZAÇÃO DO PEDIDO ================= -->
+          <aside
+            aria-label="Resumo e Finalização do Pedido"
+            style="background-color: var(--color-brown-dark); color: var(--color-cream); border: 2px solid var(--color-brown); border-radius: var(--radius-lg); padding: 1.75rem; box-shadow: var(--shadow-elevated);"
+          >
+            <h2 class="section__title section__title--light" style="font-size: 2rem; margin-bottom: 1.25rem; padding-bottom: 0.85rem; border-bottom: 1px solid rgba(250, 243, 230, 0.14);">
+              Resumo do <span class="text-yellow">Pedido</span>
+            </h2>
+
+            <form id="checkout-form" style="display: flex; flex-direction: column; gap: 1.35rem;">
+
+              <!-- 1. Modalidade: Delivery ou Retirada -->
+              <div>
+                <span style="display: block; font-size: 0.78rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-yellow); margin-bottom: 0.55rem;">
+                  1. Como deseja receber?
+                </span>
+                <div class="filter-tabs" role="radiogroup" aria-label="Modalidade de entrega">
+                  <button
+                    type="button"
+                    class="filter-tab is-active"
+                    id="mode-delivery"
+                    data-mode="delivery"
+                    aria-checked="true"
+                    style="flex: 1;"
+                  >
+                    Entrega Delivery
+                  </button>
+                  <button
+                    type="button"
+                    class="filter-tab"
+                    id="mode-pickup"
+                    data-mode="pickup"
+                    aria-checked="false"
+                    style="flex: 1;"
+                  >
+                    Retirar no Balcão
+                  </button>
+                </div>
+
+                <!-- Campos de Endereço (Delivery) -->
+                <div id="delivery-address-fields" style="display: flex; flex-direction: column; gap: 0.65rem; margin-top: 0.85rem;">
+                  <input
+                    type="text"
+                    id="customer-address"
+                    required
+                    placeholder="Rua, número e complemento (ex: Rua das Brasas, 120)"
+                    style="width: 100%; padding: 0.72rem 0.9rem; border-radius: var(--radius-sm); border: 1.5px solid var(--color-brown-light); background-color: var(--color-black-soft); color: var(--color-cream); font-family: var(--font-body); font-size: 0.88rem;"
+                  >
+                  <input
+                    type="text"
+                    id="customer-neighborhood"
+                    required
+                    placeholder="Bairro / Ponto de referência"
+                    style="width: 100%; padding: 0.72rem 0.9rem; border-radius: var(--radius-sm); border: 1.5px solid var(--color-brown-light); background-color: var(--color-black-soft); color: var(--color-cream); font-family: var(--font-body); font-size: 0.88rem;"
+                  >
+                </div>
+
+                <!-- Aviso de Retirada no Balcão -->
+                <div
+                  id="pickup-info-box"
+                  hidden
+                  style="margin-top: 0.85rem; background-color: rgba(18, 14, 12, 0.55); border: 1px solid rgba(244, 169, 30, 0.35); border-radius: var(--radius-sm); padding: 0.75rem 0.9rem; font-size: 0.84rem; color: rgba(250, 243, 230, 0.86);"
+                >
+                  <strong class="text-yellow" style="display: block;">Retirada sem taxa (20–25 min):</strong>
+                  Rua das Brasas, 482 — Vila Madalena, São Paulo.
+                </div>
+              </div>
+
+              <!-- 2. Cupom de Desconto -->
+              <div>
+                <label for="coupon-input" style="display: block; font-size: 0.78rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-yellow); margin-bottom: 0.5rem;">
+                  2. Cupom Promocional
+                </label>
+                <div style="display: flex; gap: 0.5rem;">
+                  <input
+                    type="text"
+                    id="coupon-input"
+                    placeholder="Ex: BRASA15 ou BRASA10"
+                    style="flex: 1; padding: 0.72rem 0.9rem; border-radius: var(--radius-sm); border: 1.5px solid var(--color-brown-light); background-color: var(--color-black-soft); color: var(--color-cream); font-family: var(--font-body); font-size: 0.88rem; text-transform: uppercase;"
+                  >
+                  <button type="button" id="apply-coupon-btn" class="btn btn--outline-yellow btn--sm">
+                    Aplicar
+                  </button>
+                </div>
+                <p id="coupon-feedback" style="font-size: 0.8rem; margin-top: 0.45rem; color: var(--color-yellow);" aria-live="polite"></p>
+              </div>
+
+              <!-- 3. Forma de Pagamento -->
+              <div>
+                <label for="payment-method" style="display: block; font-size: 0.78rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-yellow); margin-bottom: 0.5rem;">
+                  3. Forma de Pagamento
+                </label>
+                <select
+                  id="payment-method"
+                  style="width: 100%; padding: 0.75rem 0.9rem; border-radius: var(--radius-sm); border: 1.5px solid var(--color-brown-light); background-color: var(--color-black-soft); color: var(--color-cream); font-family: var(--font-body); font-size: 0.9rem;"
+                >
+                  <option value="PIX Instantâneo">PIX Instantâneo (Aprovação Imediata)</option>
+                  <option value="Cartão de Crédito na Entrega">Cartão de Crédito na Entrega / Retirada</option>
+                  <option value="Cartão de Débito na Entrega">Cartão de Débito na Entrega / Retirada</option>
+                  <option value="Vale-Refeição (Alelo / Sodexo / VR)">Vale-Refeição (Alelo / Sodexo / VR)</option>
+                </select>
+              </div>
+
+              <!-- 4. Observações para a Cozinha -->
+              <div>
+                <label for="kitchen-notes" style="display: block; font-size: 0.78rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-yellow); margin-bottom: 0.5rem;">
+                  4. Observações para a Cozinha (Opcional)
+                </label>
+                <input
+                  type="text"
+                  id="kitchen-notes"
+                  placeholder="Ex: Sem cebola roxa, enviar ketchup extra..."
+                  style="width: 100%; padding: 0.72rem 0.9rem; border-radius: var(--radius-sm); border: 1.5px solid var(--color-brown-light); background-color: var(--color-black-soft); color: var(--color-cream); font-family: var(--font-body); font-size: 0.88rem;"
+                >
+              </div>
+
+              <!-- 5. Totais Financeiros -->
+              <div style="background-color: rgba(18, 14, 12, 0.65); border: 1px solid rgba(250, 243, 230, 0.12); border-radius: var(--radius-md); padding: 1.15rem; display: flex; flex-direction: column; gap: 0.6rem;">
+                <div style="display: flex; justify-content: space-between; font-size: 0.92rem; color: rgba(250, 243, 230, 0.84);">
+                  <span>Subtotal dos itens</span>
+                  <strong id="summary-subtotal">R$ 0,00</strong>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; font-size: 0.92rem; color: rgba(250, 243, 230, 0.84);">
+                  <span>Taxa de entrega</span>
+                  <strong id="summary-delivery">R$ 8,90</strong>
+                </div>
+
+                <div id="summary-discount-row" hidden style="display: none; justify-content: space-between; font-size: 0.92rem; color: var(--color-yellow);">
+                  <span id="summary-discount-label">Desconto aplicado</span>
+                  <strong id="summary-discount">- R$ 0,00</strong>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; align-items: baseline; padding-top: 0.75rem; margin-top: 0.25rem; border-top: 1px solid rgba(250, 243, 230, 0.16);">
+                  <span style="font-weight: 700; font-size: 1rem;">Total do Pedido</span>
+                  <strong class="text-yellow" id="summary-total" style="font-family: var(--font-display); font-size: 2.15rem; line-height: 1;">
+                    R$ 0,00
+                  </strong>
+                </div>
+              </div>
+
+              <!-- Botão Finalizar Pedido -->
+              <button type="submit" id="checkout-submit-btn" class="btn btn--primary btn--lg" style="width: 100%;">
+                Finalizar Pedido na Brasa &rarr;
+              </button>
+
+              <p style="font-size: 0.78rem; text-align: center; color: rgba(250, 243, 230, 0.68);">
+                Quer acumular pontos neste pedido? <a href="login.html" class="text-yellow" style="text-decoration: underline;">Entre na sua conta</a>.
+              </p>
+            </form>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= RODAPÉ (FOOTER) ================= -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <!-- Coluna 1: Marca -->
+      <div class="footer__col">
+        <a href="index.html" class="navbar__logo footer__logo">
+          <span class="navbar__logo-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>
+            </svg>
+          </span>
+          <div class="navbar__logo-text">
+            <span class="navbar__brand">BRASA <span class="text-yellow">&amp;</span> CO.</span>
+            <span class="navbar__tagline">HAMBURGUERIA ARTESANAL</span>
+          </div>
+        </a>
+        <p class="footer__desc">
+          Paixão por carne fresca, fogo real e receitas autorais desde 2018. Venha viver a experiência completa no salão ou peça no conforto de casa.
+        </p>
+        <div class="footer__socials">
+          <a href="#" aria-label="Instagram da Brasa & Co." class="social-link">IG</a>
+          <a href="#" aria-label="TikTok da Brasa & Co." class="social-link">TT</a>
+          <a href="#" aria-label="WhatsApp da Brasa & Co." class="social-link">WA</a>
+        </div>
+      </div>
+
+     
+
+      <!-- Coluna 3: Horários -->
+      <div class="footer__col">
+        <h3 class="footer__heading">Horário de Funcionamento</h3>
+        <ul class="footer__hours">
+          <li><span>Terça a Quinta:</span> <strong>18h00 – 23h30</strong></li>
+          <li><span>Sexta e Sábado:</span> <strong>18h00 – 01h00</strong></li>
+          <li><span>Domingo:</span> <strong>17h30 – 23h00</strong></li>
+          <li class="closed"><span>Segunda-feira:</span> <strong>Fechado (Preparo)</strong></li>
+        </ul>
+      </div>
+
+      <!-- Coluna 4: Endereço e Contato -->
+      <div class="footer__col">
+        <h3 class="footer__heading">Onde Estamos</h3>
+        <address class="footer__address">
+          <p>Rua das Brasas, 482 — Vila Madalena</p>
+          <p>São Paulo — SP, CEP 05434-000</p>
+          <p class="footer__contact">WhatsApp: <a href="tel:+5511999998888">(11) 99999-8888</a></p>
+          <p class="footer__contact">E-mail: <a href="mailto:contato@brasaeco.com.br">contato@brasaeco.com.br</a></p>
+        </address>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="container footer__bottom-inner">
+        <p>&copy; 2026 Brasa &amp; Co. Hamburgueria Artesanal. Todos os direitos reservados.</p>
+        <p>Imagens ilustrativas • Feito com fogo e paixão.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
