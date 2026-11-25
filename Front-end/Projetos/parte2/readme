@@ -1,1 +1,48 @@
+# 🍔 Brasa & Co. — Hamburgueria Artesanal
 
+Projeto de front-end completo para uma hamburgueria artesanal desenvolvido com **HTML5**, **CSS3** e **JavaScript puro (Vanilla JS)**, com foco em experiência do usuário, responsividade, organização modular e persistência de dados no navegador via `localStorage`.
+
+---
+
+## 📋 Índice
+
+1. [Visão Geral do Projeto](#1-visão-geral-do-projeto)
+2. [Estrutura de Pastas e Arquivos](#2-estrutura-de-pastas-e-arquivos)
+3. [Identidade Visual e Tipografia](#3-identidade-visual-e-tipografia)
+4. [Passo a Passo da Construção](#4-passo-a-passo-da-construção)
+   - [Etapa 1: Estruturação das Páginas HTML](#etapa-1-estruturação-das-páginas-html)
+   - [Etapa 2: Estilização Unificada](#etapa-2-estilização-unificada)
+   - [Etapa 3: Separação da Lógica em JavaScript Externo](#etapa-3-separação-da-lógica-em-javascript-externo)
+   - [Etapa 4: Unificação do Cardápio e Carrinho com `localStorage`](#etapa-4-unificação-do-cardápio-e-carrinho-com-localstorage)
+   - [Etapa 5: Área de Login e Cadastro (`login.html` + `login.js`)](#etapa-5-área-de-login-e-cadastro-loginhtml--loginjs)
+5. [Funcionalidades Implementadas](#5-funcionalidades-implementadas)
+6. [Como Executar o Projeto Localmente](#6-como-executar-o-projeto-localmente)
+
+---
+
+## 1. Visão Geral do Projeto
+
+O site **Brasa & Co.** simula a plataforma digital completa de uma hamburgueria artesanal, permitindo que o cliente:
+- Navegue pelo cardápio dividido por categorias;
+- Filtre lanches por tipo ou pesquise por ingredientes em tempo real;
+- Adicione produtos ao carrinho a partir do cardápio ou de sugestões rápidas;
+- Personalize o ponto da carne, escolha entre entrega ou retirada, aplique cupons promocionais e finalize o pedido;
+- Crie uma conta ou faça login no programa de fidelidade **Clube Brasa & Co.**
+
+---
+
+## 2. Estrutura de Pastas e Arquivos
+
+```text
+brasa-co/
+├── Home.html          # Página inicial da hamburgueria
+├── cardapio.html      # Catálogo completo com filtros, busca e barra de pedido
+├── carrinho.html      # Revisão de itens, upsell, cupons e checkout
+├── login.html         # Área de autenticação e cadastro no Clube Brasa & Co.
+├── Combos.html        # Página de promoções e combos especiais
+├── avaliacoes.html    # Depoimentos e avaliações de clientes
+├── Home.css           # Folha de estilos principal
+├── unificado.css      # Folha de estilos compartilhada entre catálogo e carrinho
+├── app.js             # JavaScript unificado (Catálogo + Carrinho + Menu Mobile)
+├── login.js           # JavaScript dedicado à página de Login e Cadastro
+└── README.md          # Documentação do projeto
