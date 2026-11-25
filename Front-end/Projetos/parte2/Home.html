@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Brasa & Co. — Hamburgueria artesanal feita no fogo real. Blend 100% Angus, pão brioche de fermentação natural e ingredientes selecionados.">
+  <title>Brasa &amp; Co. | Hamburgueria Artesanal</title>
+
+  <!-- Google Fonts: Barlow Condensed (Títulos) & Plus Jakarta Sans (Textos e UI) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Folha de Estilos Principal -->
+  <link rel="stylesheet" href="Home.css">
+</head>
+<body>
+
+  <!-- ================= BARRA DE NAVEGAÇÃO (NAVBAR) ================= -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar__container">
+      <!-- Logotipo -->
+      <a href="Home.html" class="navbar__logo" aria-label="Brasa & Co. Página Inicial">
+        <span class="navbar__logo-icon" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>
+          </svg>
+        </span>
+        <div class="navbar__logo-text">
+          <span class="navbar__brand">BRASA <span class="text-yellow">&amp;</span> CO.</span>
+          <span class="navbar__tagline">HAMBURGUERIA ARTESANAL</span>
+        </div>
+      </a>
+
+      <!-- Links de Navegação Desktop -->
+      <nav class="navbar__nav" id="nav-menu" aria-label="Menu Principal">
+        <ul class="navbar__list">
+          <li><a href="Home.html" class="navbar__link active">Início</a></li>
+          <li><a href="cardapio.html" class="navbar__link">Cardápio</a></li>
+          <li><a href="avaliacoes.html" class="navbar__link">Avaliações</a></li>
+          <li>
+            <a href="Combos.html" class="navbar__link navbar__link--promo">
+              Combos
+              <span class="badge-dot" aria-hidden="true"></span>
+            </a>
+          </li>
+          <li><a href="carrinho.html" class="navbar__link">Pedido</a></li>
+        </ul>
+      </nav>
+
+      <!-- Área Destacada de Login/Cadastro + CTA Desktop -->
+      <div class="navbar__actions">
+        <a href="login.html" class="btn btn--login" title="Acessar conta ou cadastrar-se">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+          <span>Entrar / Cadastrar</span>
+        </a>
+       
+      </div>
+
+    </div>
+  </header>
+
+  <main>
+    <!-- ================= HERO BANNER ================= -->
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <span class="eyebrow-badge">100% ANGUS NA BRASA • PÃO BRIOCHE FRESCO</span>
+          <h1 class="hero__title">
+            O Sabor Defumado Que <span class="text-yellow">Domina</span> Sua Fome.
+          </h1>
+          <p class="hero__subtitle">
+            Blends moídos diariamente na casa, grelhados no fogo alto com lenha frutífera, queijo cheddar maturado derretido no vapor e bacon caramelizado artesanalmente.
+          </p>
+
+          <div class="hero__cta-group">
+            <a href="cardapio.html" class="btn btn--primary btn--lg">
+              Ver Cardápio Completo
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </a>
+            <a href="Combos.html" class="btn btn--outline-yellow btn--lg">
+              Combos &amp; Promoções
+            </a>
+          </div>
+
+          <div class="hero__stats">
+            <div class="hero__stat-item">
+              <strong class="text-yellow">4.9 ★</strong>
+              <span>+2.400 avaliações</span>
+            </div>
+            <div class="hero__stat-divider" aria-hidden="true"></div>
+            <div class="hero__stat-item">
+              <strong>35 min</strong>
+              <span>Entrega expressa quente</span>
+            </div>
+            <div class="hero__stat-divider" aria-hidden="true"></div>
+            <div class="hero__stat-item">
+              <strong>180g</strong>
+              <span>Carne fresca todo dia</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__visual">
+          <div class="hero__image-wrapper">
+            <img
+              src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1000&q=85"
+              alt="Hambúrguer artesanal duplo com cheddar derretido, alface fresca e pão brioche selado"
+              class="hero__img"
+            >
+            <div class="hero__floating-card">
+              <span class="floating-card__tag">MAIS PEDIDO</span>
+              <p class="floating-card__name">Brasa Clássico Supremo</p>
+              <p class="floating-card__price">R$ 36,90</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FAIXA DE PROMOÇÃO ================= -->
+    <section class="promo-strip" aria-label="Destaque Promocional">
+      <div class="container promo-strip__container">
+        <div class="promo-strip__info">
+          <span class="promo-strip__pill">OFERTA DA SEMANA</span>
+          <p class="promo-strip__text">
+            <strong>Combo Brasa em Dobro:</strong> 2 Burgers Artesanais + 2 Fritas Rústicas com Páprica por <strong>R$ 74,90</strong>.
+          </p>
+        </div>
+        <a href="Combos.html" class="promo-strip__link">
+          Resgatar Oferta &rarr;
+        </a>
+      </div>
+    </section>
+
+    <!-- ================= DESTAQUES DO CARDÁPIO ================= -->
+    <section class="section section--cream" id="destaques">
+      <div class="container">
+        <header class="section__header">
+          <span class="section__eyebrow">FEITOS NA HORA • INGREDIENTES NOBRES</span>
+          <h2 class="section__title">Destaques do Nosso Cardápio</h2>
+          <p class="section__desc">
+            Conheça as criações que conquistaram os apaixonados por hambúrguer artesanal. Todos acompanham nossa maionese defumada da casa.
+          </p>
+        </header>
+
+        <div class="menu-grid">
+          <!-- Card 1 -->
+          <article class="burger-card">
+            <div class="burger-card__media">
+              <img
+                src="https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?auto=format&fit=crop&w=800&q=80"
+                alt="Brasa Clássico Supremo com bacon crocante e batatas rústicas"
+                loading="lazy"
+              >
+              <span class="burger-card__badge burger-card__badge--red">Mais Vendido</span>
+            </div>
+            <div class="burger-card__body">
+              <div class="burger-card__top">
+                <h3 class="burger-card__title">Brasa Clássico Supremo</h3>
+                <span class="burger-card__weight">180g</span>
+              </div>
+              <p class="burger-card__ingredients">
+                Blend 100% Angus na brasa, duplo cheddar inglês maturado, tiras de bacon caramelizado no melado, cebola roxa e maionese defumada no brioche.
+              </p>
+              <div class="burger-card__footer">
+                <div class="burger-card__price">
+                  <small>A partir de</small>
+                  <span>R$ 36,90</span>
+                </div>
+                <a href="cardapio.html" class="btn btn--primary btn--sm">Pedir</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="burger-card">
+            <div class="burger-card__media">
+              <img
+                src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=80"
+                alt="Truffle & Brie Melt com queijo brie derretido e cogumelos"
+                loading="lazy"
+              >
+              <span class="burger-card__badge burger-card__badge--yellow">Chef's Choice</span>
+            </div>
+            <div class="burger-card__body">
+              <div class="burger-card__top">
+                <h3 class="burger-card__title">Truffle &amp; Brie Melt</h3>
+                <span class="burger-card__weight">180g</span>
+              </div>
+              <p class="burger-card__ingredients">
+                Hambúrguer Angus suculento, queijo brie cremoso derretido, cogumelos paris salteados na manteiga de ervas, rúcula fresca e aioli de trufas negras.
+              </p>
+              <div class="burger-card__footer">
+                <div class="burger-card__price">
+                  <small>A partir de</small>
+                  <span>R$ 42,90</span>
+                </div>
+                <a href="cardapio.html" class="btn btn--primary btn--sm">Pedir</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="burger-card">
+            <div class="burger-card__media">
+              <img
+                src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=800&q=80"
+                alt="Duplo Smash Old School com crosta caramelizada e picles"
+                loading="lazy"
+              >
+              <span class="burger-card__badge burger-card__badge--dark">Crocância Máxima</span>
+            </div>
+            <div class="burger-card__body">
+              <div class="burger-card__top">
+                <h3 class="burger-card__title">Duplo Smash Old School</h3>
+                <span class="burger-card__weight">2x 100g</span>
+              </div>
+              <p class="burger-card__ingredients">
+                Dois discos prensados na chapa de ferro até criar crosta dourada, duplo american cheese, picles artesanal agridoce, cebola picada e molho especial Brasa.
+              </p>
+              <div class="burger-card__footer">
+                <div class="burger-card__price">
+                  <small>A partir de</small>
+                  <span>R$ 34,90</span>
+                </div>
+                <a href="cardapio.html" class="btn btn--primary btn--sm">Pedir</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="burger-card">
+            <div class="burger-card__media">
+              <img
+                src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=800&q=80"
+                alt="Inferno BBQ Bacon com onion rings e molho barbecue artesanal"
+                loading="lazy"
+              >
+              <span class="burger-card__badge burger-card__badge--red">Picante</span>
+            </div>
+            <div class="burger-card__body">
+              <div class="burger-card__top">
+                <h3 class="burger-card__title">Inferno BBQ &amp; Bacon</h3>
+                <span class="burger-card__weight">180g</span>
+              </div>
+              <p class="burger-card__ingredients">
+                Blend Angus grelhado, queijo gouda maçaricado, geleia de pimenta jalapeño defumada, onion rings crocantes, bacon em cubos e barbecue de café torrado.
+              </p>
+              <div class="burger-card__footer">
+                <div class="burger-card__price">
+                  <small>A partir de</small>
+                  <span>R$ 39,90</span>
+                </div>
+                <a href="cardapio.html" class="btn btn--primary btn--sm">Pedir</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="section__cta">
+          <a href="cardapio.html" class="btn btn--brown btn--lg">
+            Explorar Cardápio Completo (Burgers, Porções &amp; Shakes)
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SOBRE A HAMBURGUERIA ================= -->
+    <section class="section section--dark" id="sobre">
+      <div class="container about__grid">
+        <div class="about__media">
+          <img
+            src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=950&q=80"
+            alt="Carne artesanal grelhando sobre brasas vivas"
+            class="about__img"
+            loading="lazy"
+          >
+          <div class="about__experience-badge">
+            <span class="about__year">DESDE 2018</span>
+            <strong>Culto ao Fogo Real</strong>
+          </div>
+        </div>
+
+        <div class="about__content">
+          <span class="section__eyebrow text-yellow">NOSSA FILOSOFIA ARTESANAL</span>
+          <h2 class="section__title section__title--light">
+            Não Fazemos Fast-Food. Fazemos Hambúrguer de Verdade.
+          </h2>
+          <p class="about__text">
+            Na <strong>Brasa &amp; Co.</strong>, cada detalhe importa. Rejeitamos carnes congeladas e conservantes: selecionamos cortes dianteiros e traseiros certificados para moer nosso próprio blend todas as manhãs, garantindo textura macia e suculência extrema.
+          </p>
+
+          <div class="pillars">
+            <div class="pillar-item">
+              <div class="pillar-item__icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                  <path d="M2 17l10 5 10-5"/>
+                  <path d="M2 12l10 5 10-5"/>
+                </svg>
+              </div>
+              <div>
+                <h3>Blend Fresco Diário</h3>
+                <p>Proporção exata de carne e gordura marmorizada, nunca congelada.</p>
+              </div>
+            </div>
+
+            <div class="pillar-item">
+              <div class="pillar-item__icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>
+                </svg>
+              </div>
+              <div>
+                <h3>Grelha em Alta Temperatura</h3>
+                <p>Selagem rápida sobre brasa viva que preserva os sucos internos e traz aroma defumado.</p>
+              </div>
+            </div>
+
+            <div class="pillar-item">
+              <div class="pillar-item__icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
+                  <line x1="9" y1="9" x2="9.01" y2="9"/>
+                  <line x1="15" y1="9" x2="15.01" y2="9"/>
+                </svg>
+              </div>
+              <div>
+                <h3>Pão Brioche de Fermentação Natural</h3>
+                <p>Assado diariamente e tostado na manteiga clarificada antes da montagem.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= AVALIAÇÕES DOS CLIENTES ================= -->
+    <section class="section section--cream-alt" id="avaliacoes">
+      <div class="container">
+        <header class="section__header">
+          <span class="section__eyebrow">QUEM PROVA, RECOMENDA</span>
+          <h2 class="section__title">O Que Dizem Nossos Clientes</h2>
+          <div class="rating-summary">
+            <span class="stars" aria-label="5 de 5 estrelas">★★★★★</span>
+            <span>Nota <strong>4.9/5</strong> baseada em mais de 2.400 pedidos verificados</span>
+          </div>
+        </header>
+
+        <div class="reviews-grid">
+          <article class="review-card">
+            <div class="review-card__stars" aria-label="5 estrelas">★★★★★</div>
+            <p class="review-card__quote">
+              "O ponto da carne veio impecável mesmo no delivery! O Brasa Clássico Supremo tem aquele gostinho real de churrasqueira e o bacon caramelizado é viciante."
+            </p>
+            <div class="review-card__author">
+              <div class="review-card__avatar" aria-hidden="true">RM</div>
+              <div>
+                <strong>Rafael Mendes</strong>
+                <span>Pediu: Brasa Clássico Supremo</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="review-card">
+            <div class="review-card__stars" aria-label="5 estrelas">★★★★★</div>
+            <p class="review-card__quote">
+              "Melhor hamburgueria artesanal da região sem dúvida. O Truffle &amp; Brie Melt é equilibrado, o pão não desmonta e as batatas rústicas chegam super crocantes."
+            </p>
+            <div class="review-card__author">
+              <div class="review-card__avatar" aria-hidden="true">CA</div>
+              <div>
+                <strong>Camila Andrade</strong>
+                <span>Pediu: Truffle &amp; Brie Melt</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="review-card">
+            <div class="review-card__stars" aria-label="5 estrelas">★★★★★</div>
+            <p class="review-card__quote">
+              "Aproveitei a promoção da semana pelo site e valeu cada centavo. Atendimento rápido, embalagem térmica caprichada e maionese defumada surreal."
+            </p>
+            <div class="review-card__author">
+              <div class="review-card__avatar" aria-hidden="true">LF</div>
+              <div>
+                <strong>Lucas Ferreira</strong>
+                <span>Pediu: Combo Brasa em Dobro</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= BANNER CLUBE DE FIDELIDADE (CTA LOGIN/CADASTRO) ================= -->
+    <section class="loyalty-banner">
+      <div class="container loyalty-banner__box">
+        <div class="loyalty-banner__content">
+          <span class="loyalty-banner__tag">CLUBE BRASA FIDELIDADE</span>
+          <h2>Ganhe R$ 15 OFF no Primeiro Pedido e Acumule Pontos!</h2>
+          <p>
+            Crie sua conta gratuita agora mesmo, acompanhe seus pedidos em tempo real e troque suas brasas acumuladas por burgers e milkshakes grátis.
+          </p>
+        </div>
+        <div class="loyalty-banner__actions">
+          <a href="login.html" class="btn btn--primary btn--lg">Criar Conta Grátis</a>
+          <a href="Combos.html" class="btn btn--outline-cream btn--lg">Ver Ofertas</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= RODAPÉ (FOOTER) ================= -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <!-- Coluna 1: Marca -->
+      <div class="footer__col">
+        <a href="Home.html" class="navbar__logo footer__logo">
+          <span class="navbar__logo-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>
+            </svg>
+          </span>
+          <div class="navbar__logo-text">
+            <span class="navbar__brand">BRASA <span class="text-yellow">&amp;</span> CO.</span>
+            <span class="navbar__tagline">HAMBURGUERIA ARTESANAL</span>
+          </div>
+        </a>
+        <p class="footer__desc">
+          Paixão por carne fresca, fogo real e receitas autorais desde 2018. Venha viver a experiência completa no salão ou peça no conforto de casa.
+        </p>
+        <div class="footer__socials">
+          <a href="#" aria-label="Instagram da Brasa & Co." class="social-link">IG</a>
+          <a href="#" aria-label="TikTok da Brasa & Co." class="social-link">TT</a>
+          <a href="#" aria-label="WhatsApp da Brasa & Co." class="social-link">WA</a>
+        </div>
+      </div>
+
+      
+
+      <!-- Coluna 3: Horários -->
+      <div class="footer__col">
+        <h3 class="footer__heading">Horário de Funcionamento</h3>
+        <ul class="footer__hours">
+          <li><span>Terça a Quinta:</span> <strong>18h00 – 23h30</strong></li>
+          <li><span>Sexta e Sábado:</span> <strong>18h00 – 01h00</strong></li>
+          <li><span>Domingo:</span> <strong>17h30 – 23h00</strong></li>
+          <li class="closed"><span>Segunda-feira:</span> <strong>Fechado (Preparo)</strong></li>
+        </ul>
+      </div>
+
+      <!-- Coluna 4: Endereço e Contato -->
+      <div class="footer__col">
+        <h3 class="footer__heading">Onde Estamos</h3>
+        <address class="footer__address">
+          <p>Rua das Brasas, 482 — Vila Madalena</p>
+          <p>São Paulo — SP, CEP 05434-000</p>
+          <p class="footer__contact">WhatsApp: <a href="tel:+5511999998888">(11) 99999-8888</a></p>
+          <p class="footer__contact">E-mail: <a href="mailto:contato@brasaeco.com.br">contato@brasaeco.com.br</a></p>
+        </address>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="container footer__bottom-inner">
+        <p>&copy; 2026 Brasa &amp; Co. Hamburgueria Artesanal. Todos os direitos reservados.</p>
+        <p>Imagens ilustrativas • Feito com fogo e paixão.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
